@@ -14,4 +14,13 @@ for i in range(3, n+1, 2):
             break
     else:
         lst.append(i)
-print(lst)
+
+my_str = ''.join(map(str, lst))
+#print(my_str.count('1'))
+
+ls = []
+for i in range(1, 10):
+    max = my_str.count(str(i))
+    ls.append(max)
+    break
+print(i)
