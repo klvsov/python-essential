@@ -1,11 +1,10 @@
-N, L, K = input().split()
-N = int(N)
-L = int(L)
-K = int(K)
-s = 0
-c = 1
-while N >= c:
-    s += L
-    L += K
-    c += 1
+a, b, h = input().split()
+
+a = int(a)
+b = int(b)
+h = int(h)
+
+s1 = a * b
+s2 = (a - 2 * h) * (b - 2 * h)
+s = s1 - s2
 print(s)
