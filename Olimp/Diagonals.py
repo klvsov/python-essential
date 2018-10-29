@@ -1,5 +1,12 @@
-N = int(input())
+n = int(input())
 
-r = (N * (N - 1) * (N - 2) * (N - 3)) / 24
+if n == 3:
+    answer = 0
+else:
+    answer = 1
+    k = n - 3
+    for i in range(k, n + 1):
+        answer = answer * i
+    answer = answer / 24
 
-print(int(r))
+print(int(answer))

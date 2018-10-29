@@ -3,13 +3,17 @@ n = int(n)
 m = int(m)
 a = int(a)
 b = int(b)
-
-r = 0
- 
-
-if (b >= 4 * a):
-    r = (m - n) * a
+x = m - n
+if x <= 0:
+    answer = 0
 else:
-    r = ((m - n) // 4) * b + min (b, ((m - n) % 4) * a)
- 
-print(r)
+    if b >= 4 * a:
+        answer = a * x
+    else:
+        answer = (x // 4) * b
+        y = x % 4
+        if y * a > b:
+            answer = answer + b
+        else:
+            answer = answer + a * y
+print(answer)
