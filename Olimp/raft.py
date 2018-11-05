@@ -1,19 +1,19 @@
-h = input().split()
-for i in range(len(h)):
-    h[i] = int(h[i])
+x1, y1, x2, y2, x, y = input().split()
+x1 = int(x1)
+y1 = int(y1)
+x2 = int(x2)
+y2 = int(y2)
+x = int(x)
+y = int(y)
 
-x1 = h[0]
-y1 = h[1]
-x2 = h[2]
-y2 = h[3]
-x = h[4]
-y = h[5]
-answer = ""
+answer = ''
 if y > y2:
-    answer += "N"
+    answer += 'N'
 if y < y1:
-    answer += "S"
+    answer += 'S'
 if x < x1:
-    answer += "W"
+    answer += 'W'
 if x > x2:
-    answer += "E"
+    answer += 'E'
+
+print(answer)
