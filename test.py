@@ -1,8 +1,15 @@
-el = input().split()
-
-for i in range(len(el)):
-     el[i] = int(el[i])
-
-for i in range(1, len(el)):
-    if el[i] > el[i-1]:
-         print(el[i])
+k = int(input())
+i = 1
+c = 0
+while i <= k:
+    a = i
+    n = 0
+    while a > 0:
+        z = a % 10
+        a //= 10
+        n *= 10
+        n += z
+    if n == i:
+        c += 1
+    i += 1
+print(c)
