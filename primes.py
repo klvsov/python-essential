@@ -1,18 +1,16 @@
-def isPrime(m):
-    prime = True
+def isPrime(n):
+    Prime = True
     d = 2
-    while d * d <= m:
-        if m % d == 0:
-           prime = False
+    while d * d <= n:
+        if n % d == 0:
+            Prime = False
         d += 1
-    return prime
+    return Prime
 
-m,n = input().split()
-m = int(m)
+m, n = input().split()
 n = int(n)
-
+m = int(m)
 absent = True
-
 for i in range(m, n + 1):
     if isPrime(i):
         print(i)
