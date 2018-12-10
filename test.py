@@ -1,21 +1,30 @@
-def isPrime(m):
-    prime = True
-    d = 2
-    while d * d <= m:
-        if m % d == 0:
-           prime = False
-        d += 1
-    return prime
+a, b, c = input().split()
+a = int(a)
+b = int(b)
+c = int(c)
 
-m,n = input().split()
-m = int(m)
-n = int(n)
+s = a + b + c
+x = s / 3
 
-absent = True
-
-for i in range(m, n + 1):
-    if isPrime(i):
-        print(i)
-        absent = False
-    if absent:
-        print('Absent')
+if x % 1 != 0:
+    print('IMPOSSIBLE')
+else:
+    x = int(x)
+    if a > x:
+        print('-', a - x, sep="", end=" ")
+    elif a < x:
+        print('+', x - a, sep="", end=" ")
+    else:
+        print(0, sep="", end=" ")
+    if b > x:
+        print('-', b - x, sep="", end=" ")
+    elif b < x:
+        print('+', x - b, sep="", end=" ")
+    else:
+        print(0, sep="", end=" ")
+    if c > x:
+        print('-', c - x, sep="", end=" ")
+    elif c < x:
+        print('+', x - c, sep="", end=" ")
+    else:
+        print(0, sep="", end=" ")
