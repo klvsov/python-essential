@@ -1,24 +1,45 @@
-q = input()
-h = input()
+queen = input()
+horse = input()
 
-q2 = q[1]
-h2 = h[1]
+qrow = int(queen[1])
+hrow = int(horse[1])
+
+cell = []
 
 chess = 'abcdefgh'
-q_letter = q[0]
-q1 = chess.find(q_letter) + 1
-h_letter = h[0]
-h1 = chess.find(h_letter) + 1
+q_letter = queen[0]
+qcol = chess.find(q_letter) + 1
 
-count_q = 14
+h_letter = horse[0]
+hcol = chess.find(h_letter) + 1
 
-if (q1 == 1) or (q1 == 8) or (q2 == 1) or (q2 == 8):
-    count_q += 7
-elif (q1 == 2) or (q1 == 7) or (q2 == 2) or (q2 == 7):
-    count_q += 9
-elif (q1 == 3) or (q1 == 6) or (q2 == 3) or (q2 == 6):
-    count_q += 11
-elif (q1 == 4) or (q1 == 5) or (q2 == 4) or (q2 == 5):
-    count_q += 13
+for i in range(1,9):
+    for j in range(1,9):
+        if (abs(hcol - i) == 2) and (abs(hrow - j) == 1) or (abs(hcol - i) == 1) and (abs(hrow - j) == 2):
+            cell.append(str(i)+ " " + str(j))
 
-print(count_q)
+for i in range(1,9):
+    for j in range(1,9):
+        if qcol == i or qrow == j or abs(qcol - i) == abs(qrow - j):
+            cell.append(str(i)+ " " + str(j))
+
+
+cell.append(str(hcol)+ " " + str(hrow))
+cell.append(str(qcol)+ " " + str(qrow))
+cell_queen = str(qcol)+ " " + str(qrow)
+cell_horse = str(hcol)+ " " + str(hrow)
+s = []
+for i in cell:
+       if i not in s:
+          s.append(i)
+
+s.remove(cell_horse)
+s.remove(cell_queen)
+print(len(s))
+
+#cell = set(cell)
+#cell_horse = set(cell_horse)
+#cell_queen = set(cell_queen)
+#d1 = cell & cell_horse
+#d2 = cell & cell_queen
+#res = len(cell) - len(d1) - len(d2)
