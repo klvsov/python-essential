@@ -35,11 +35,7 @@ for i in cell:
 
 s.remove(cell_horse)
 s.remove(cell_queen)
+print(s)
 print(len(s))
 
-#cell = set(cell)
-#cell_horse = set(cell_horse)
-#cell_queen = set(cell_queen)
-#d1 = cell & cell_horse
-#d2 = cell & cell_queen
-#res = len(cell) - len(d1) - len(d2)
+
