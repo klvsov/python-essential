@@ -10,4 +10,4 @@ for i in range(a, b + 1):
         i //= 10
     if s ** 0.5 % 1 == 0:
         c += 1
-print(c)
+print(c)    
